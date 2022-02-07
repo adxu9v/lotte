@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>롯데월드 어드벤처</title>
-    
+    <link rel="shortcut icon" href="icons/lotte_fav.ico" type="image/x-icon">
     <style>
         @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
@@ -18,33 +18,33 @@
         #header2{width: 100%; height: 99px; border-bottom: 1px solid #e1e1e1;}
         #header1_box{width: 1410px; height: 100%; margin: auto; }
         #header1_left_menu{height: 46px; float: left;  line-height: 46px;}
-        #header1_left_menu>li{float: left; font-size: 14px; letter-spacing: -1.5px; padding-right: 15px; margin-right: 15px; background: url(icons/header_gnb_border.jpg) right center no-repeat; color: #555;}
+        #header1_left_menu>li{float: left; font-size: 14px; letter-spacing: -1.5px; padding-right: 15px; margin-right: 15px; background: url(icons/header_gnb_border.jpg) right center no-repeat; color: #555; cursor: pointer;}
         #header1_left_menu>li:last-child{background: none;}
-        #header1_left_menu>li>img{vertical-align: middle; margin: 3px 6px 0 0;}
+        #header1_left_menu>li>img{vertical-align: middle; margin: 3px 6px 0 0; cursor: pointer;}
         #header1_right_menu{height: 46px; float: right;}
-        #header1_right_menu>li{float: left; line-height: 46px; font-size: 14px; margin-left: 10px; color: #555;}
+        #header1_right_menu>li{float: left; line-height: 46px; font-size: 14px; margin-left: 10px; color: #555; cursor: pointer;}
         #header1_right_menu>li>img{vertical-align: middle; margin-top: -5px;}
         #header1_right_menu>li:nth-child(1){background: url(icons/header_gnb_border2.jpg) right center no-repeat; padding-right: 10px;} #header1_right_menu>li:nth-child(3){background: url(icons/header_gnb_border2.jpg) right center no-repeat; padding-right: 10px; margin-left: 25px;}
         #header2_box{width: 1410px; height: 100%; margin: auto; position: relative;}
         .fw900{font-weight: 700;}
-        #logo{height: 72px; margin-top: 13px; float: left;}
+        #logo{height: 72px; margin-top: 13px; float: left; cursor: pointer;}
         #header2_icon_menu{height: 72px; float: right; margin-top: 20px;  }
-        #header2_icon_menu>li{display: inline-block; vertical-align: bottom; margin-left: 15px; text-align: center; color: #550adf; }
+        #header2_icon_menu>li{display: inline-block; vertical-align: bottom; margin-left: 15px; text-align: center; color: #550adf; cursor: pointer;}
         #header2_icon_menu>li>h4{font-weight: 300;}
         #header2_menu{width: 800px; height: 99px; line-height: 99px; position: absolute; top: 0; left: -200px; right: 0; bottom: 0; margin: auto; text-align: center; }
-        #header2_menu>li{display: inline-block; font-size: 18px; font-weight: 700; margin: 0 30px;}
-        #slide{width: 100%; height: 720px; position: relative; background: url(images/main_slide1.jpg) center 0 no-repeat;}
+        #header2_menu>li{display: inline-block; font-size: 18px; font-weight: 700; margin: 0 30px; cursor: pointer;}
+        #slide{width: 100%; height: 720px; position: relative; background: url(images/main_slide1.jpg) center 0 no-repeat; cursor: pointer;}
         #slide_prebtn{position: absolute; top: 0; bottom: 0; left: 2%; margin: auto;}
         #slide_nextbtn{position: absolute; top: 0; bottom: 0; right: 2%; margin: auto;}
         #slide_btn{width: 230px; height: 40px; position: absolute; bottom: 30px; left: 0; right: 0; margin: auto; background-color: rgba(0, 0, 0, 0.65);  border-radius: 50px;}
         #slide_btn>ul{width: 190px; height: 40px; float: left; text-align: center; line-height: 40px;}
-        #slide_btn>ul>li{display: inline-block;opacity: 0.5;}
+        #slide_btn>ul>li{display: inline-block; opacity: 0.5; cursor: pointer; margin-left: 5px;}
         #slide_btn>ul>li:first-child{opacity: 1;}
-        #slide_pause{width: 40px; height: 40px; float: right; border-radius: 40px;}
+        #slide_pause{width: 40px; height: 40px; float: right; border-radius: 40px; cursor: pointer;}
         #operating_time{width: 1170px; height: 80px; line-height: 80px; margin: auto; text-align: center; border-bottom: 1px solid #e1e1e1;}
-        #operating_time>img{ width: 40px;vertical-align: middle; margin-top: -5px; margin-right: 20px;}
-        #operating_time>h3{display: inline-block;  font-size: 20px; font-weight: 900; margin-right: 50px; letter-spacing: -2px;}
-        #operating_time>h4{display: inline-block;  font-size: 20px;font-weight: 900;}
+        #operating_time>img{ width: 40px;vertical-align: middle; margin-top: -5px; margin-right: 20px; cursor: pointer;}
+        #operating_time>h3{display: inline-block;  font-size: 20px; font-weight: 900; margin-right: 50px; letter-spacing: -2px; cursor: pointer;}
+        #operating_time>h4{display: inline-block;  font-size: 20px;font-weight: 900; cursor: pointer;}
         #event{width: 100%; text-align: center; }
         #event_box{margin-top: 130px;}
         #event_box>h2{font-size: 38px; font-weight: 300;}
@@ -66,18 +66,92 @@
         #information_box>h5{font-weight: 300; font-size: 18px; margin-top: 20px;}
         #information_ul_box{width: 100%; height: 372px; position: relative; margin-top: 100px;}
         #information_ul_box>ul{width: 3278px; height: 372px; position: absolute; top: 0; left: 50%; transform: translateX(-50%); }
-        #information_ul_box>ul>li{width: 276px; height: 350px; float: left; margin: 11px; position: relative;}
+        #information_ul_box>ul>li{width: 276px; height: 350px; float: left; margin: 11px; position: relative; transition: 0.3s;}
         #information_ul_box>ul>li:nth-child(8){text-align: left;}
-        #information_box_ul{}
+        #information_ul_box>ul>li:hover{font-weight: 900; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); cursor: pointer;}
+        #information_ul_box>ul>li:hover  .gradiant_box>h4{font-weight: 700; opacity: 1;}
         .gradiant_box{width: 276px; height: 350px; position: absolute; left: 0; top: 0; background:linear-gradient(transparent, black); opacity: 0.8;}
         .gradiant_box>h4{position: absolute; left: 20px; bottom: 20px; font-weight: 400;}
         #line_box{width: 150px; height: 30px; margin: auto; margin-top: 100px; position: relative;}
         #line_box>img{position: absolute; top: 0; bottom: 0; right: 0; left: 0; margin: auto;}
         #line{width: 150px; height: 6px; background-color: #fff; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; border-radius: 100px;}
-        #information_drag{}
         #information_drag>button{width: 224px; height: 56px; border-radius: 300px; border: none; margin-top: 30px; margin-left: 20px; border: 1px solid #fff;}
-        #information_bt1{color: #550adf; font-size: 18px;}
-        #information_bt2{background-color: transparent; color: #fff; font-size: 18px;}
+        #information_bt1{color: #550adf; font-size: 18px; cursor: pointer;}
+        #information_bt2{background-color: transparent; color: #fff; font-size: 18px; cursor: pointer;}
+        #fun{width: 100%; height: 1280px; background: url(images/mainCon3_bg.jpg) center 0 no-repeat; background-size: cover; position: relative;}
+        #fun_box{width: 1170px; height: 1028px; top: 0; bottom: 0; left: 0; right: 0; margin: auto; position: absolute; text-align: center;}
+        #button_box>button{border: 1px solid #aaa; padding: 10px 15px; font-size: 16px; font-weight: 700; margin: 0 5px; margin-top: 30px; margin-bottom: 10px; border-radius: 40px; color: #666; background: none; cursor: pointer;}
+        #button_box>button:first-child{color: #550adf; border: 1px solid #550adf;}
+        #fun_box>h2{font-size: 40px; font-weight: 300;}
+        #fun_box>ul{margin-top: 20px;}
+        #fun_box>ul>li{width: 23.5%; height: 350px;  background-color: #fff; float: left; margin: 10px 0; margin-right: 2%; text-align: left; transition-property: box-shadow;
+        transition-duration: 0.3s; cursor: pointer;}
+        .fun_p_box{padding: 15px 30px;}
+        .fun_p_box>h3{font-size: 24px;}
+        .fun_p_box>h5{font-weight: 300; margin-top: 5px;}
+        #fun_box>ul>li>img{width: 100%;}
+        #fun_box>ul>li:hover{background-color: #550adf; color: #fff; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);}
+        #fun_box>ul>li:nth-child(3n){margin-right: 0%;}
+        #fun_box>ul>li:first-child{width: 49%;}
+        #fun_box>ul>li:last-child{width: 49%;}
+        #fun_btn_box2{position: absolute; left: 0; right: 0; bottom: 0; margin: auto;}
+        #fun_btn_box2>button{border: 1px solid #550adf; color: #550adf; padding: 15px 30px; font-size: 18px; font-weight: 400; border-radius: 40px; background: none; cursor: pointer;}
+        #fun_btn_box2>button:first-child{background-color: #550adf; color: #fff; margin-right: 10px;}
+        #special{width: 100%; height: 1200px; border-bottom: 1px solid #eee; overflow: hidden;}
+        #special_box{height: 1200px; width: 1170px; margin: auto; text-align: center; position: relative; overflow: hidden;}
+        #special_top_btn{position: absolute; bottom: 0;right: 0; cursor: pointer;}
+        #special_box>h2{margin-top: 80px; font-size: 40px; line-height: 50px; font-weight: 400;}
+        #special_box>h5{margin-top: 20px; color: #666; font-size: 18px; font-weight: 400;}
+        #special_line{width: 100%; height: 1px; background-color: #ccc; margin-top: 40px;}
+        #special_ul_box{width: 100%; overflow: hidden;}
+        #special_ul_box>h5{font-size: 20px; text-align: left; margin-top: 30px;}
+        #special_ul_box>ul{margin-top: 30px;}
+        #special_ul_box>ul>li{float: left; width: 23.5%; margin-right: 2%; text-align: left; transition: 0.3s; position: relative; cursor: pointer;}
+        #special_ul_box>ul>li>h5{font-size: 20px; font-weight: 300; line-height: 50px; transition: 0.3s;}
+        .special_shadow_box{position: absolute; left: 0; top: 0; width: 100%; height: 275px; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); opacity: 0; transition: 0.3s;}
+        #special_ul_box>ul>li:hover>h5{color: #550adf;  font-weight: 700;}
+        #special_ul_box>ul>li:hover  .special_shadow_box{opacity: 1;}
+        #special_ul_box>ul>li:last-child{margin-right: 0;}
+        #special_ul_box>ul>li>img{width: 100%;}
+        #special_news_box{width: 100%; overflow: hidden; margin-top: 50px;}
+        #special_news{width: 49%; border: 1px solid #aaa; overflow: hidden; text-align: left; padding: 40px 30px; box-sizing: border-box; font-size: 18px; font-weight: 300; line-height: 32px; float: left;}
+        #special_news>ul:last-child{float: right; font-size: 16px;}
+        #special_news>ul>li{cursor: pointer;}
+        .special_underline:hover{text-decoration: underline; cursor: pointer;}
+        #special_news>ul:last-child>li:first-child{font-size: 14px; font-weight: 400;}
+        #special_news>ul{display: inline-block;}
+        #special_news>ul:first-child>li:first-child{cursor: auto;}
+        #special_news>ul>li:first-child{font-size: 24px; font-weight: 700; margin-bottom: 15px;}
+        #special_news>ul>li:first-child>img{vertical-align: middle;margin-left: 10px;}
+        #special_img_box{width: 49%; float: right; cursor: pointer;}
+        #special_img_box>img{width: 100%;}
+        footer{width: 100%; height: 390px; overflow: hidden;}
+        #footer_box{width: 1170px; height: 100%;  margin: auto; text-align: center;}
+        #footer_top{width: 100%; height: 118px;border-bottom: 1px solid #eee;}
+        #footer_top_left>li{float: left; margin-right: 15px; font-size: 16px; color: #666; line-height: 130px; cursor: pointer;}
+        #footer_top_left>li:nth-child(4){color: red;}
+        #footer_top_left>li:last-child{margin-right: 0;}
+        #footer_top_right{float: right;}
+        #footer_top_right>li{float: left; line-height: 130px; margin-left: 10px; cursor: pointer;}
+        #footer_top_right>li:first-child{margin-left: 0;}
+        #footer_top_right>li>img{vertical-align: middle;}
+        #footer_bottom{width: 1170px; height: 100%; position: relative; }
+        #footer_bottom_left{float: left; margin-top: 30px;}
+        #footer_bottom_right{float: right; margin-top: 20px;}
+        #footer_bottom_right>select{padding: 15px 60px 15px 15px; float: right; border: 1px solid #aaa; }
+        #lotte_on{margin-top: 80px; cursor: pointer;}
+        #footer_center{width: 540px; height: 184px; position: absolute; bottom: 0; top: 7%; left: 12%; right: 0;  text-align-last: left; overflow: hidden;}
+        #footer_center>h5{margin-top: 0px; font-size: 14px; font-weight: 300; line-height: 25px;}
+        #footer_center>h5>img{vertical-align: middle; margin: 5px;}
+        #footer_center>p{font-size: 12px; font-weight: 300; margin-top: 20px;}
+        #footer_img_box{margin-top: 25px; float: left; cursor: pointer;}
+        #footer_img_box>ul>li{float: left; margin-right: 15px;}
+        #footer_img_box>ul>li>p{font-size: 12px; font-weight: 300; float: right; line-height: 20px;}
+        #footer_img_box>ul>li:last-child>p{line-height: 40px;}
+        #footer_img_box>ul>li>p>img{ vertical-align: middle; cursor: pointer;}
+        #top_btn{width: 70px; height: 70px; position: fixed; z-index: 999; bottom: 5%; right: 3%; font-size: 12px; font-weight: 900; color: #fff; border-radius: 100px; box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); cursor: pointer;}
+        #top_btn>h2{position: absolute; right: 0; left: 0; bottom: 0; top: 0; margin: auto; line-height: 70px; text-align: center;}
+        #top_btn>img{width: 100%;}
     </style>
 </head>
 <body>
@@ -229,5 +303,163 @@
     </div>
     </div>
 </div>
+<div id="fun">
+    <div id="fun_box">
+        <h2>재미있고 즐거운 <span class="fw900">다양한 어트랙션!</span></h2>
+        <div id="button_box">
+            <button>아이와 함께</button>
+            <button>야외에서 신나게</button>
+            <button>실내에서 쾌적하게</button>
+        </div>
+        <ul>
+            <li class="fun_box_li_w50">
+                <img src="images/202010231014353460.jpg" alt="">
+                <div class="fun_p_box"><h3>언더씨킹덤</h3>
+                <h5>아이와 함께 떠나는 해저왕국 탐험!</h5></div>
+                
+            </li>
+            <li>
+                <img src="images/202006241107064920.jpg" alt="">
+                <div class="fun_p_box"><h3>유레카</h3>
+                <h5>높이높이 날아올라요~</h5></div>
+                
+            </li>
+            <li>
+                <img src="images/202006241107064920.jpg" alt="">
+                <div class="fun_p_box"><h3>점핑피쉬</h3>
+                <h5>신나는 해저여행</h5></div>
+                
+            </li>
+            <li>
+                <img src="images/20180619061904008.jpg" alt="">
+                <div class="fun_p_box"><h3>스윙팡팡</h3>
+                <h5>로티와 친구들이 함께 팡팡</h5></div>
+                
+            </li>
+            <li>
+                <img src="images/202006241108538410.jpg" alt="">
+                <div class="fun_p_box"><h3>매직붕붕카</h3>
+                <h5>헨젤과 그레텔을 구해주세요!</h5></div>
+                
+            </li>
+            <li class="fun_box_li_w50">
+                <img src="images/202007241119261500.jpg" alt="">
+                <div class="fun_p_box"><h3>키즈토리아</h3>
+                <h5>마음껏 즐길수 있는 거대한 동화속 세상</h5></div>
+            </li>
+        </ul>
+        <div id="fun_btn_box2">
+            <button>더 많은 어트랙션 보기</button>
+            <button>운휴 정보 보러가기</button>
+        </div>
+    </div>
+</div>
+<div id="special">
+    <div id="special_box">
+        <div id="special_top_btn"><img src="icons/top_btn.png" alt=""></div>
+    <h2>롯데월드를 좀 더 <br>
+        <span class="fw900">특별하게 즐기고 싶다면!</span></h2>
+        <h5>오늘 롯데월드의 소식을 만나보세요.</h5>
+        <div id="special_line"></div>
+        <div id="special_ul_box">
+            <h5>특별한 경험</h5>
+            <ul>
+                <li><img src="images/mainCon4_img3_20211231.jpg" alt="">
+                    <div class="special_shadow_box"></div>
+                    <h5>샤론캣 프리미엄라운지</h5>
+                </li>
+                <li><img src="images/mainCon4_img2.jpg" alt="">
+                    <div class="special_shadow_box"></div>
+                    <h5>롯데월드 어드벤처 선물권</h5>
+                </li>
+                <li><img src="images/mainCon4_img1.jpg" alt="">
+                    <div class="special_shadow_box"></div>
+                    <h5>연간이용안내</h5>
+                </li>
+                <li><img src="images/maincon4_covid.jpg" alt="">
+                    <div class="special_shadow_box"></div>
+                    <h5>코로나19 예방 종합안내</h5>
+                </li>
+            </ul>
+        </div>
+        <div id="special_news_box">
+        <div id="special_news">
+            <ul>
+                <li>롯데월드 소식</li>
+                <li class="special_underline">코로나19 예방을 위한 롯데월드 어드벤처</li>
+                <li class="special_underline">공연참여 프로그램 운영 안내</li>
+                <li class="special_underline">롯데월드 로티프렌즈 색칠놀이</li>
+                <li class="special_underline">월드 카트레이싱 GRAND OPEN</li>
+            </ul>
+            <ul>
+                <li>더보기 <img src="icons/main_more_icon.png" alt=""></li>
+                <li>2020.08.11</li>
+                <li>2021.12.17</li>
+                <li>2021.10.26</li>
+                <li>2021.06.10</li>
+            </ul>
+        </div>
+        <div id="special_img_box">
+            <img src="images/201912060405241830.jpg" alt="">
+        </div>
+    </div>
+</div>
+</div>
+<footer>
+    <div id="footer_box">
+        <div id="footer_top">
+            <ul id="footer_top_left">
+                <li>롯데월드 소개</li>
+                <li>기업 제휴 및 입점 문의</li>
+                <li>이용약관</li>
+                <li>개인정보처리방침</li>
+                <li>이메일무단수집거부</li>
+                <li>Compliance Program</li>
+                <li>사이트맵</li>
+                <li>인재채용</li>
+                <li>그룹PR</li>
+            </ul>
+            <ul id="footer_top_right">
+                <li><img src="icons/sns_btn1.png" alt=""></li>
+                <li><img src="icons/sns_btn2.png" alt=""></li>
+                <li><img src="icons/sns_btn3.png" alt=""></li>
+            </ul>
+        </div>
+        <div id="footer_bottom">
+            <div id="footer_bottom_left">
+                <img src="icons/footer_logo.png" alt="">
+            </div>
+            <div id="footer_bottom_right">
+                <select name="" id="">
+                    <option value="">계열사 관련 사이트</option>
+                    <option value="">롯데그룹</option>
+                    <option value="">롯데그룹채용</option>
+                    <option value="">롯데제과</option>
+                    <option value="">엔제리너스</option>
+                    <option value="">롯데리아</option>
+                </select>
+                <div id="lotte_on"><img src="images/img_lotteon_pc.jpg" alt=""></div> 
+            </div>
+            <div id="footer_center">
+                <h5>서울특별시 송파구 올림픽로 240 호텔롯데 롯데월드 <img src="icons/header_gnb_border2.jpg" alt=""> 대표자 : 최홍훈 <br>
+                    사업자등록번호 : 219-85-00014 <img src="icons/header_gnb_border2.jpg" alt=""> 통신판매업신고번호 : 송파 제5513호 <img src="icons/header_gnb_border2.jpg" alt=""> 전화 : 1661-2000</h5>
+                    <p>COPYRIGHT 2018 LOTTEWORLD. ALL RIGHTS RESERVED.</p>
+                    <div id="footer_img_box">
+                        <ul>
+                            <li><img src="icons/isms_icon.png" alt="">
+                                <li><p>인증범위 <img src="icons/header_gnb_border2.jpg" alt=""> 온라인 예매 서비스 운영(롯데월드)
+                                    <br>
+                                    유효기간 <img src="icons/header_gnb_border.jpg" alt=""> 2020.11.18~2023.11.17</p></li>
+                        </li>
+                            <li><img src="icons/isms_icon.png" alt="">
+                                <li><p>한국서비스대상 명예의전당</p></li></li>
+                        </ul>
+                        </div>
+                    
+            </div>
+        </div>
+    </div>
+</footer>
+<div id="top_btn"><img src="icons/quick_btn.png" alt=""><h2>QUICK</h2></div>
 </body>
 </html>
