@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>롯데월드 어드벤처</title>
     <link rel="shortcut icon" href="icons/lotte_fav.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $('#popup_close').click(()=>{
+                $('#popup').css({'display':'none'})
+                
+            })
+        })
+    </script>
     <style>
         @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
@@ -25,13 +34,13 @@
         #header1_right_menu>li{float: left; line-height: 46px; font-size: 14px; margin-left: 10px; color: #555; cursor: pointer;}
         #header1_right_menu>li>img{vertical-align: middle; margin-top: -5px;}
         #header1_right_menu>li:nth-child(1){background: url(icons/header_gnb_border2.jpg) right center no-repeat; padding-right: 10px;} #header1_right_menu>li:nth-child(3){background: url(icons/header_gnb_border2.jpg) right center no-repeat; padding-right: 10px; margin-left: 25px;}
-        #header2_box{width: 1410px; height: 100%; margin: auto; position: relative; border: 1px solid #000;}
+        #header2_box{width: 1410px; height: 100%; margin: auto; position: relative; }
         .fw900{font-weight: 700;}
         #logo{height: 72px; margin-top: 13px; float: left; cursor: pointer;}
         #header2_icon_menu{height: 72px; float: right; margin-top: 20px;  }
         #header2_icon_menu>li{display: inline-block; vertical-align: bottom; margin-left: 15px; text-align: center; color: #550adf; cursor: pointer;}
         #header2_icon_menu>li>h4{font-weight: 300;}
-        #header2_menu{width: 800px; height: 99px; line-height: 99px; position: absolute; top: 0; left: -200px; right: 0; bottom: 0; margin: auto; text-align: center; border: 1px solid #000;}
+        #header2_menu{width: 800px; height: 99px; line-height: 99px; position: absolute; top: 0; left: -200px; right: 0; bottom: 0; margin: auto; text-align: center; }
         #header2_menu>li{display: inline-block; font-size: 18px; font-weight: 700; margin: 0 30px; cursor: pointer;}
         #slide{width: 100%; height: 720px; position: relative; background: url(images/main_slide1.jpg) center 0 no-repeat; cursor: pointer;}
         #slide_prebtn{position: absolute; top: 0; bottom: 0; left: 2%; margin: auto;}
@@ -152,6 +161,15 @@
         #top_btn{width: 70px; height: 70px; position: fixed; z-index: 999; bottom: 5%; right: 3%; font-size: 12px; font-weight: 900; color: #fff; border-radius: 100px; box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); cursor: pointer;}
         #top_btn>h2{position: absolute; right: 0; left: 0; bottom: 0; top: 0; margin: auto; line-height: 70px; text-align: center;}
         #top_btn>img{width: 100%;}
+        #popup{position: absolute; left: 56px ; top: 176px; width: 492px; height: 278px; border: 4px solid #7333ee; text-align: center; background-color: #fff; word-spacing: -3px; transition: 0.3s;}
+        #popup>h2{margin-top: 55px; font-size: 28px; ;}
+        #popup>h3{margin-top: 10px; font-weight: 300; font-size: 18px;}
+        #popup>h3>span{font-weight: 700; margin-right: 5px;}
+        #popup>button{width: 280px; height: 50px; font-size: 24px; font-weight: 700; border: none; border-radius: 300px; margin-top: 35px; background-color: #7333ee;color: #fff; word-spacing: -2px; line-height: 50px;}
+        #popup_text{position: absolute; left: 10px; bottom: 10px; color: #666; font-weight: 100; word-spacing: -2px;}
+        #popup_text>input{width: 20px; height: 20px; margin-top: 2px; vertical-align: top; margin-right: 5px;}
+        /* #popup_checkbox{position: absolute; width: 18px; height: 18px; border: 1px solid #ccc; border-radius: 2px; background-color: #eee;} */
+        #popup>img{position: absolute; top: 10px; right: 10px; vertical-align: top; width: 24px; cursor: pointer;}
     </style>
 </head>
 <body>
@@ -461,5 +479,15 @@
     </div>
 </footer>
 <div id="top_btn"><img src="icons/quick_btn.png" alt=""><h2>QUICK</h2></div>
+<div id="popup">
+    <h2>특별방역지침에 따른 파크 이용 안내</h2>
+    <h3><span>적용기간 </span> 22년 01월 17(월) ~ 22년 02월 20일(일)</h3>
+    <button>자세히 보기</button>
+    <div id="popup_text">
+        <div id="popup_checkbox"></div>
+        <input type="checkbox" name="" id="">오늘 하루 보지 않기
+    </div>
+    <img src="icons/popClose_icon4.png" alt="" id="popup_close">
+</div>
 </body>
 </html>
