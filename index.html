@@ -33,15 +33,35 @@
         #header1_right_menu{height: 46px; float: right;}
         #header1_right_menu>li{float: left; line-height: 46px; font-size: 14px; margin-left: 10px; color: #555; cursor: pointer;}
         #header1_right_menu>li>img{vertical-align: middle; margin-top: -5px;}
-        #header1_right_menu>li:nth-child(1){background: url(icons/header_gnb_border2.jpg) right center no-repeat; padding-right: 10px;} #header1_right_menu>li:nth-child(3){background: url(icons/header_gnb_border2.jpg) right center no-repeat; padding-right: 10px; margin-left: 25px;}
-        #header2_box{width: 1410px; height: 100%; margin: auto; position: relative; }
+        #header1_right_menu>li:nth-child(1){background: url(icons/header_gnb_border2.jpg) right center no-repeat; padding-right: 10px;}
+        #header1_right_menu>li:nth-child(3){background: url(icons/header_gnb_border2.jpg) right center no-repeat; padding-right: 10px; margin-left: 25px;}
+        #header2_box{width: 1410px; height: 100%; margin: auto; }
         .fw900{font-weight: 700;}
         #logo{height: 72px; margin-top: 13px; float: left; cursor: pointer;}
-        #header2_icon_menu{height: 72px; float: right; margin-top: 20px;  }
+        #header2_icon_menu{height: 72px; float: right; margin-top: 20px;}
         #header2_icon_menu>li{display: inline-block; vertical-align: bottom; margin-left: 15px; text-align: center; color: #550adf; cursor: pointer;}
         #header2_icon_menu>li>h4{font-weight: 300;}
-        #header2_menu{width: 800px; height: 99px; line-height: 99px; position: absolute; top: 0; left: -200px; right: 0; bottom: 0; margin: auto; text-align: center; }
+        #header2_menu{width: 800px; height: 99px; line-height: 99px; text-align: center; float: left; margin-left: 100px;}
         #header2_menu>li{display: inline-block; font-size: 18px; font-weight: 700; margin: 0 30px; cursor: pointer;}
+        .sub_wrap{width: 100%; height: 335px; background-color: #fff; position: absolute; left: 0; top: 147px; z-index: 999; opacity: 1; line-height: 20px; border-top: 1px solid #550adf;}
+        .sub_box{width: 1410px; height: 100%; margin: auto;}
+        .sub_box1{width: 240px; height: 335px; float: left; background-color: #fff; text-align: left; padding-left: 10px; box-sizing: border-box; border-right:  1px solid #ccc;}
+        .sub_box1>img{margin-top: 42px;}
+        .sub_box1>h3{font-size: 16px; color: #aaa; letter-spacing: -1px; margin-top: 25px;}
+        .sub_box1>h4{margin-top: 10px; font-weight: 400;}
+        .sub_box1>h5{font-size: 18px; margin-top: 3px;}
+        .sub_box1>h6{font-size: 20px; margin-top: 30px;} 
+        .sub_box2{width: 250px; height: 335px; float: left; background-color: #fff; text-align: left; padding: 20px 50px; box-sizing: border-box;}
+        .sub_box2>ul{}
+        .sub_box2>ul>li{line-height: 30px; padding: 12px; border-bottom: 1px solid #ccc;}
+        .sub_box2>ul>li:last-child{line-height: 24px;}
+        .sub_box3{width: 465px; height: 335px; float: right; background: url(icons/gnb_openDiv_bg.jpg); position: relative;  padding-left: 230px; box-sizing: border-box; text-align: left; color: #fff;}
+        .sub_box3>h3{margin-top: 30px; line-height: 30px;}
+        .sub_box3>h3>span{color: rgb(255, 156, 98);}
+        .sub_box3>ul{margin-top: 10px;}
+        .sub_box3>ul>li{font-size: 14px;}
+        .sub_box3_arrow{margin-top: 40px;}
+        .sub_box3_mobile{position: absolute; bottom: 0; right: 0;}
         #slide{width: 100%; height: 720px; position: relative; background: url(images/main_slide1.jpg) center 0 no-repeat; cursor: pointer;}
         #slide_prebtn{position: absolute; top: 0; bottom: 0; left: 2%; margin: auto;}
         #slide_nextbtn{position: absolute; top: 0; bottom: 0; right: 2%; margin: auto;}
@@ -161,7 +181,7 @@
         #top_btn{width: 70px; height: 70px; position: fixed; z-index: 999; bottom: 5%; right: 3%; font-size: 12px; font-weight: 900; color: #fff; border-radius: 100px; box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); cursor: pointer;}
         #top_btn>h2{position: absolute; right: 0; left: 0; bottom: 0; top: 0; margin: auto; line-height: 70px; text-align: center;}
         #top_btn>img{width: 100%;}
-        #popup{position: absolute; left: 56px ; top: 176px; width: 492px; height: 278px; border: 4px solid #7333ee; text-align: center; background-color: #fff; word-spacing: -3px; transition: 0.3s;}
+        #popup{position: absolute; left: 56px ; top: 176px; width: 492px; height: 278px; border: 4px solid #7333ee; text-align: center; background-color: #fff; word-spacing: -3px; transition: 0.3s; display: none;}
         #popup>h2{margin-top: 55px; font-size: 28px; ;}
         #popup>h3{margin-top: 10px; font-weight: 300; font-size: 18px;}
         #popup>h3>span{font-weight: 700; margin-right: 5px;}
@@ -194,7 +214,37 @@
             <div id="header2_box">
                 <h1 id="logo"><img src="icons/logo.png" alt=""></h1>
                 <ul id="header2_menu">
-                    <li>즐길거리</li>
+                    <li>즐길거리
+                        <div class="sub_wrap">
+                            <div class="sub_box">
+                                <div class="sub_box1">
+                                    <img src="icons/gnb_timeInfo_bg.png" alt="">
+                                    <h3>02.17 (목)</h3>
+                                    <h4>오늘의 파크</h4>
+                                    <h5>운영시간</h5>
+                                    <h6>10:00-21:00</h6>
+                                </div>
+                                <div class="sub_box2">
+                                    <ul>
+                                        <li>어트랙션</li>
+                                        <li>페스티벌</li>
+                                        <li>공연</li>
+                                        <li>다이닝/쇼핑</li>
+                                        <li>다시만난월드: <br> 캐릭터전시회</li>
+                                    </ul>
+                                </div>
+                                <div class="sub_box3">
+                                    <h3><span>앱 다운로드</span>로 <br> 더 스마트하게!</h3>
+                                    <ul>
+                                        <li>ㆍ모바일 예매</li>
+                                        <li>ㆍ모바일 티켓발권</li>
+                                        <li>ㆍ매직패스예약</li>
+                                    </ul>
+                                    <img src="icons/gnb_appDown_icon.png" alt="" class="sub_box3_arrow"><img src="images/gnb_appDown_bg.png" alt="" class="sub_box3_mobile">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li>요금/우대혜택</li>
                     <li>참여프로그램</li>
                     <li>이용가이드</li>
