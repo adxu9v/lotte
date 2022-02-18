@@ -13,6 +13,12 @@
                 $('#popup').css({'display':'none'})
                 
             })
+            $('#header2_box>ul>li').mouseenter(function(){
+                $(this).children('.sub_wrap').stop().slideDown()
+            })
+            $('#header2_box>ul>li').mouseleave(function(){
+                $(this).children('.sub_wrap').stop().slideUp()
+            })
         })
     </script>
     <style>
@@ -41,9 +47,9 @@
         #header2_icon_menu{height: 72px; float: right; margin-top: 20px;}
         #header2_icon_menu>li{display: inline-block; vertical-align: bottom; margin-left: 15px; text-align: center; color: #550adf; cursor: pointer;}
         #header2_icon_menu>li>h4{font-weight: 300;}
-        #header2_menu{width: 800px; height: 99px; line-height: 99px; text-align: center; float: left; margin-left: 100px;}
-        #header2_menu>li{display: inline-block; font-size: 18px; font-weight: 700; margin: 0 30px; cursor: pointer;}
-        .sub_wrap{width: 100%; height: 335px; background-color: #fff; position: absolute; left: 0; top: 147px; z-index: 999; opacity: 1; line-height: 20px; border-top: 1px solid #550adf;}
+        #header2_menu{width: 800px; height: 99px; line-height: 99px; text-align: center; float: left; margin-left: 100px; font-size: 0;}
+        #header2_menu>li{display: inline-block; font-size: 18px; font-weight: 700; padding: 0 30px; cursor: pointer; margin-right: 0px; border: 1px solid #000;}
+        .sub_wrap{width: 100%; height: 335px; background-color: #fff; position: absolute; left: 0; top: 147px; z-index: 999; opacity: 1; line-height: 20px; border-top: 1px solid #550adf; display: none;}
         .sub_box{width: 1410px; height: 100%; margin: auto;}
         .sub_box1{width: 240px; height: 335px; float: left; background-color: #fff; text-align: left; padding-left: 10px; box-sizing: border-box; border-right:  1px solid #ccc;}
         .sub_box1>img{margin-top: 42px;}
@@ -62,6 +68,7 @@
         .sub_box3>ul>li{font-size: 14px;}
         .sub_box3_arrow{margin-top: 40px;}
         .sub_box3_mobile{position: absolute; bottom: 0; right: 0;}
+        .sub_arrow{}
         #slide{width: 100%; height: 720px; position: relative; background: url(images/main_slide1.jpg) center 0 no-repeat; cursor: pointer;}
         #slide_prebtn{position: absolute; top: 0; bottom: 0; left: 2%; margin: auto;}
         #slide_nextbtn{position: absolute; top: 0; bottom: 0; right: 2%; margin: auto;}
@@ -215,6 +222,7 @@
                 <h1 id="logo"><img src="icons/logo.png" alt=""></h1>
                 <ul id="header2_menu">
                     <li>즐길거리
+                        <img src="icons/sub_menu_arrow.png" alt="" class="sub_arrow">
                         <div class="sub_wrap">
                             <div class="sub_box">
                                 <div class="sub_box1">
@@ -245,10 +253,124 @@
                             </div>
                         </div>
                     </li>
-                    <li>요금/우대혜택</li>
-                    <li>참여프로그램</li>
-                    <li>이용가이드</li>
-                    <li>소통서비스</li>
+                    <li>요금/우대혜택
+                        <div class="sub_wrap">
+                            <div class="sub_box">
+                                <div class="sub_box1">
+                                    <img src="icons/gnb_timeInfo_bg.png" alt="">
+                                    <h3>02.17 (목)</h3>
+                                    <h4>오늘의 파크</h4>
+                                    <h5>운영시간</h5>
+                                    <h6>10:00-21:00</h6>
+                                </div>
+                                <div class="sub_box2">
+                                    <ul>
+                                        <li>이용요금</li>
+                                        <li>이달의 혜택</li>
+                                        <li>연간이용</li>
+                                        <li>롯데월드카드</li>
+                                    </ul>
+                                </div>
+                                <div class="sub_box3">
+                                    <h3><span>앱 다운로드</span>로 <br> 더 스마트하게!</h3>
+                                    <ul>
+                                        <li>ㆍ모바일 예매</li>
+                                        <li>ㆍ모바일 티켓발권</li>
+                                        <li>ㆍ매직패스예약</li>
+                                    </ul>
+                                    <img src="icons/gnb_appDown_icon.png" alt="" class="sub_box3_arrow"><img src="images/gnb_appDown_bg.png" alt="" class="sub_box3_mobile">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>참여프로그램
+                        <div class="sub_wrap">
+                            <div class="sub_box">
+                                <div class="sub_box1">
+                                    <img src="icons/gnb_timeInfo_bg.png" alt="">
+                                    <h3>02.17 (목)</h3>
+                                    <h4>오늘의 파크</h4>
+                                    <h5>운영시간</h5>
+                                    <h6>10:00-21:00</h6>
+                                </div>
+                                <div class="sub_box2">
+                                    <ul>
+                                        <li>공연 참여</li>
+                                        <li>가든스테이지 좌석예약</li>
+                                    </ul>
+                                </div>
+                                <div class="sub_box3">
+                                    <h3><span>앱 다운로드</span>로 <br> 더 스마트하게!</h3>
+                                    <ul>
+                                        <li>ㆍ모바일 예매</li>
+                                        <li>ㆍ모바일 티켓발권</li>
+                                        <li>ㆍ매직패스예약</li>
+                                    </ul>
+                                    <img src="icons/gnb_appDown_icon.png" alt="" class="sub_box3_arrow"><img src="images/gnb_appDown_bg.png" alt="" class="sub_box3_mobile">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>이용가이드
+                        <div class="sub_wrap">
+                            <div class="sub_box">
+                                <div class="sub_box1">
+                                    <img src="icons/gnb_timeInfo_bg.png" alt="">
+                                    <h3>02.17 (목)</h3>
+                                    <h4>오늘의 파크</h4>
+                                    <h5>운영시간</h5>
+                                    <h6>10:00-21:00</h6>
+                                </div>
+                                <div class="sub_box2">
+                                    <ul>
+                                        <li>운영/운휴</li>
+                                        <li>파크 이용안내</li>
+                                        <li>편의시설/제도</li>
+                                        <li>오시는 길</li>
+                                        <li>가이드맵</li>
+                                    </ul>
+                                </div>
+                                <div class="sub_box3">
+                                    <h3><span>앱 다운로드</span>로 <br> 더 스마트하게!</h3>
+                                    <ul>
+                                        <li>ㆍ모바일 예매</li>
+                                        <li>ㆍ모바일 티켓발권</li>
+                                        <li>ㆍ매직패스예약</li>
+                                    </ul>
+                                    <img src="icons/gnb_appDown_icon.png" alt="" class="sub_box3_arrow"><img src="images/gnb_appDown_bg.png" alt="" class="sub_box3_mobile">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>소통서비스
+                        <div class="sub_wrap">
+                            <div class="sub_box">
+                                <div class="sub_box1">
+                                    <img src="icons/gnb_timeInfo_bg.png" alt="">
+                                    <h3>02.17 (목)</h3>
+                                    <h4>오늘의 파크</h4>
+                                    <h5>운영시간</h5>
+                                    <h6>10:00-21:00</h6>
+                                </div>
+                                <div class="sub_box2">
+                                    <ul>
+                                        <li>공지사항</li>
+                                        <li>FAQ</li>
+                                        <li>고객소리함</li>
+                                    </ul>
+                                </div>
+                                <div class="sub_box3">
+                                    <h3><span>앱 다운로드</span>로 <br> 더 스마트하게!</h3>
+                                    <ul>
+                                        <li>ㆍ모바일 예매</li>
+                                        <li>ㆍ모바일 티켓발권</li>
+                                        <li>ㆍ매직패스예약</li>
+                                    </ul>
+                                    <img src="icons/gnb_appDown_icon.png" alt="" class="sub_box3_arrow"><img src="images/gnb_appDown_bg.png" alt="" class="sub_box3_mobile">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
                 <ul id="header2_icon_menu"><li>
                     <img src="icons/header_srch_btn.png" alt="">
