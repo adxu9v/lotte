@@ -19,7 +19,28 @@
             $('#header2_box>ul>li').mouseleave(function(){
                 $(this).children('.sub_wrap').stop().slideUp()
             })
-        })
+            if($('#header2_box>ul>li').mouseenter()){
+                $('.sub_wrap').stop().slideDown(0)
+            }
+            else{}
+            $('#attraction_bt1').click(function(){
+                $(this).css({'color':'#550adf', 'border':'1px solid #550adf'}).siblings().css({'color':'#666', 'border':'1px solid #aaa'})
+                $('#attraction_box1').show().siblings().hide()
+            })
+            $('#attraction_bt2').click(function(){
+                $(this).css({'color':'#550adf', 'border':'1px solid #550adf'}).siblings().css({'color':'#666', 'border':'1px solid #aaa'})
+                $('#attraction_box2').show().siblings().hide()
+            })
+            $('#attraction_bt3').click(function(){
+                $(this).css({'color':'#550adf', 'border':'1px solid #550adf'}).siblings().css({'color':'#666', 'border':'1px solid #aaa'})
+                $('#attraction_box3').show().siblings().hide()
+            })
+            $('#operating_time').animate({marginTop:0, opacity:1},600)
+            $('#event_box>h2').delay(200).animate({marginTop:0, opacity:1},600)
+            $('#event_box>h4').delay(300).animate({marginTop:20, opacity:1},800)
+            $('#event_list').delay(400).animate({marginTop:50, opacity:1},500)
+            $('#event_btn').delay(500).animate({marginTop:50, opacity:1},500)
+            })
     </script>
     <style>
         @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
@@ -48,7 +69,7 @@
         #header2_icon_menu>li{display: inline-block; vertical-align: bottom; margin-left: 15px; text-align: center; color: #550adf; cursor: pointer;}
         #header2_icon_menu>li>h4{font-weight: 300;}
         #header2_menu{width: 800px; height: 99px; line-height: 99px; text-align: center; float: left; margin-left: 100px; font-size: 0;}
-        #header2_menu>li{display: inline-block; font-size: 18px; font-weight: 700; padding: 0 30px; cursor: pointer; margin-right: 0px; border: 1px solid #000;}
+        #header2_menu>li{display: inline-block; font-size: 18px; font-weight: 700; padding: 0 30px; cursor: pointer; margin-right: 0px;}
         .sub_wrap{width: 100%; height: 335px; background-color: #fff; position: absolute; left: 0; top: 147px; z-index: 999; opacity: 1; line-height: 20px; border-top: 1px solid #550adf; display: none;}
         .sub_box{width: 1410px; height: 100%; margin: auto;}
         .sub_box1{width: 240px; height: 335px; float: left; background-color: #fff; text-align: left; padding-left: 10px; box-sizing: border-box; border-right:  1px solid #ccc;}
@@ -77,16 +98,17 @@
         #slide_btn>ul>li{display: inline-block; opacity: 0.5; cursor: pointer; margin-left: 5px;}
         #slide_btn>ul>li:first-child{opacity: 1;}
         #slide_pause{width: 40px; height: 40px; float: right; border-radius: 40px; cursor: pointer;}
-        #operating_time{width: 1170px; height: 80px; line-height: 80px; margin: auto; text-align: center; border-bottom: 1px solid #e1e1e1;}
+        #operating_box{width: 100%; height: 900px; overflow: hidden;}
+        #operating_time{width: 1170px; height: 80px; line-height: 80px; margin: auto; text-align: center; border-bottom: 1px solid #e1e1e1; margin-top: 100px; opacity: 0;}
         #operating_time>img{ width: 40px;vertical-align: middle; margin-top: -5px; margin-right: 20px; cursor: pointer;}
         #operating_time>h3{display: inline-block;  font-size: 20px; font-weight: 900; margin-right: 50px; letter-spacing: -2px; cursor: pointer;}
         #operating_time>h4{display: inline-block;  font-size: 20px;font-weight: 900; cursor: pointer;}
         #event{width: 100%; text-align: center; }
         #event_box{margin-top: 130px;}
-        #event_box>h2{font-size: 38px; font-weight: 300;}
+        #event_box>h2{font-size: 38px; margin-top: 40px; font-weight: 300; opacity: 0;}
         #event_box>h2>span{font-size: 40px;}
-        #event_box>h4{margin-top: 20px; font-size: 17px; font-weight: 300; color: #666;}
-        #event_list{width: 1204px; height: 352px;  margin: auto; margin-top: 50px;}
+        #event_box>h4{margin-top: 40px; font-size: 17px; font-weight: 300; color: #666; opacity: 0;}
+        #event_list{width: 1204px; height: 352px;  margin: auto; margin-top: 80px; opacity: 0;}
         #event_list>li{width: 300px; height: 350px; border: 1px solid #e1e1e1; float: left; padding: 30px; box-sizing: border-box; text-align: left;  white-space: nowrap; text-overflow: ellipsis; transition: 0.3s; cursor: pointer; position: relative;}
         #event_list>li:not(:first-child){border-left: none;}
         #event_list>li>h5{font-size: 20px; margin-top: 15px; color: #550adf; font-weight: 300;}
@@ -95,7 +117,7 @@
         .hover_effect1{width: 300px; height: 350px; border: 2px solid #550adf; box-sizing: border-box; position: absolute; left: 0; top: 0; box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2); opacity: 0; transition: 0.4s;}
         #event_list>li:hover>.hover_effect1{color: #550adf; opacity: 1; }
         #event_list>li:hover{color: #550adf;}
-        #event_btn{width: 224px; height: 56px; margin-top: 50px; border-radius: 200px; line-height: 56px; background-color: #550adf; color: #fff; font-size: 18px; font-weight: 300; word-spacing: -1px; border: none; cursor: pointer;}
+        #event_btn{width: 224px; height: 56px; margin-top: 70px; border-radius: 200px; line-height: 56px; background-color: #550adf; color: #fff; font-size: 18px; font-weight: 300; word-spacing: -1px; border: none; cursor: pointer; opacity: 0;}
         #information{width: 100%; height: 1070px; background: url(images/mainCon2_bg_20220103.jpg) center 0 no-repeat; background-size: cover;  margin-top: 100px; text-align: center; overflow: hidden;}
         #information_box{width: 100%; height: 1070px;margin-top: 100px; color: #fff; font-size: 20px; font-weight: 100;}
         #information_box>h2{font-weight: 300; font-size: 40px;}
@@ -114,22 +136,26 @@
         #information_drag>button{width: 224px; height: 56px; border-radius: 300px; border: none; margin-top: 30px; margin-left: 20px; border: 1px solid #fff;}
         #information_bt1{color: #550adf; font-size: 18px; cursor: pointer;}
         #information_bt2{background-color: transparent; color: #fff; font-size: 18px; cursor: pointer;}
-        #fun{width: 100%; height: 1280px; background: url(images/mainCon3_bg.jpg) center 0 no-repeat; background-size: cover; position: relative;}
+        #attraction{width: 100%; height: 1280px; background: url(images/mainCon3_bg.jpg) center 0 no-repeat; background-size: cover; position: relative;}
         #fun_box{width: 1170px; height: 1028px; top: 0; bottom: 0; left: 0; right: 0; margin: auto; position: absolute; text-align: center;}
-        #button_box>button{border: 1px solid #aaa; padding: 10px 15px; font-size: 16px; font-weight: 700; margin: 0 5px; margin-top: 30px; margin-bottom: 10px; border-radius: 40px; color: #666; background: none; cursor: pointer;}
-        #button_box>button:first-child{color: #550adf; border: 1px solid #550adf;}
-        #fun_box>h2{font-size: 40px; font-weight: 300;}
-        #fun_box>ul{margin-top: 20px;}
-        #fun_box>ul>li{width: 23.5%; height: 350px;  background-color: #fff; float: left; margin: 10px 0; margin-right: 2%; text-align: left; transition-property: box-shadow;
+        #attraction_bt>button{border: 1px solid #aaa; padding: 10px 15px; font-size: 16px; font-weight: 700; margin: 0 5px; margin-top: 30px; margin-bottom: 10px; border-radius: 40px; color: #666; background: none; cursor: pointer;}
+        #attraction_bt>button:first-child{color: #550adf; border: 1px solid #550adf;}
+        #attraction_box{}
+        #attraction_box>h2{font-size: 40px; font-weight: 300;}
+        #attraction_box>ul{margin-top: 20px;}
+        #attraction_box>ul>li{width: 23.5%; height: 350px;  background-color: #fff; float: left; margin: 10px 0; margin-right: 2%; text-align: left; transition-property: box-shadow;
         transition-duration: 0.3s; cursor: pointer;}
         .fun_p_box{padding: 15px 30px;}
         .fun_p_box>h3{font-size: 24px;}
         .fun_p_box>h5{font-weight: 300; margin-top: 5px;}
-        #fun_box>ul>li>img{width: 100%;}
-        #fun_box>ul>li:hover{background-color: #550adf; color: #fff; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);}
-        #fun_box>ul>li:nth-child(3n){margin-right: 0%;}
-        #fun_box>ul>li:first-child{width: 49%;}
-        #fun_box>ul>li:last-child{width: 49%;}
+        #attraction_box>ul{overflow: hidden;}
+        #attraction_box>ul>li>img{width: 100%;}
+        #attraction_box>ul>li:hover{background-color: #550adf; color: #fff; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);}
+        #attraction_box>ul>li:nth-child(3n){margin-right: 0% !important;}
+        #attraction_box>ul>li:first-child{width: 49%;}
+        #attraction_box ul>li:last-child{width: 49%;}
+        #attraction_box2{display: none;}
+        #attraction_box3{display: none;}
         #fun_btn_box2{position: absolute; left: 0; right: 0; bottom: 0; margin: auto;}
         #fun_btn_box2>button{border: 1px solid #550adf; color: #550adf; padding: 15px 30px; font-size: 18px; font-weight: 400; border-radius: 40px; background: none; cursor: pointer;}
         #fun_btn_box2>button:first-child{background-color: #550adf; color: #fff; margin-right: 10px;}
@@ -426,44 +452,47 @@
         <div id="slide_pause"><img src="icons/play_bt.png" alt=""></div>
     </div>
 </div>
-<div id="operating_time">
-    <img src="icons/gnb_timeInfo_bg.png" alt="">
-    <h3 class="notosanskr">오늘의 파크 운영시간</h3>
-    <h4 class="notosanskr">10:00-21:00</h4>
+<div id="operating_box">
+    <div id="operating_time">
+        <img src="icons/gnb_timeInfo_bg.png" alt="">
+        <h3 class="notosanskr">오늘의 파크 운영시간</h3>
+        <h4 class="notosanskr">10:00-21:00</h4>
+    </div>
+    <div id="event">
+        <div id="event_box">
+            <h2><span class="fw900">나에게 꼭 맞는 혜택 </span>알아볼까요?</h2>
+            <h4>현재 진행 중인 할인혜택을 알아보세요.</h4>
+            <ul id="event_list">
+                <li class="hover_effect">
+                    <img src="images/event1.jpg" alt="">
+                    <h5>26,500원</h5>
+                    <h3>롯데월드 제휴카드 온라...</h3>
+                    <div class="hover_effect1"></div>
+                </li>
+                <li class="hover_effect">
+                    <img src="images/event2.jpg" alt="">
+                    <h5>29,500원</h5>
+                    <h3>제휴카드 현장 프로모션</h3>
+                    <div class="hover_effect1"></div>
+                </li>
+                <li class="hover_effect">
+                    <img src="images/event3.jpg" alt="">
+                    <h5>22,222원</h5>
+                    <h3>신나는 2월, 설레는 202..</h3>
+                    <div class="hover_effect1"></div>
+                </li>
+                <li class="hover_effect">
+                    <img src="images/event4.jpg" alt="">
+                    <h5>28,500원</h5>
+                    <h3>해피 겨울방학</h3>
+                    <div class="hover_effect1"></div>
+                </li>
+            </ul>
+            <button id="event_btn">더 많은 혜택 보기</button>
+        </div> 
+    </div>
 </div>
-<div id="event">
-    <div id="event_box">
-        <h2><span class="fw900">나에게 꼭 맞는 혜택 </span>알아볼까요?</h2>
-        <h4>현재 진행 중인 할인혜택을 알아보세요.</h4>
-        <ul id="event_list">
-            <li class="hover_effect">
-                <img src="images/event1.jpg" alt="">
-                <h5>26,500원</h5>
-                <h3>롯데월드 제휴카드 온라...</h3>
-                <div class="hover_effect1"></div>
-            </li>
-            <li class="hover_effect">
-                <img src="images/event2.jpg" alt="">
-                <h5>29,500원</h5>
-                <h3>제휴카드 현장 프로모션</h3>
-                <div class="hover_effect1"></div>
-            </li>
-            <li class="hover_effect">
-                <img src="images/event3.jpg" alt="">
-                <h5>22,222원</h5>
-                <h3>신나는 2월, 설레는 202..</h3>
-                <div class="hover_effect1"></div>
-            </li>
-            <li class="hover_effect">
-                <img src="images/event4.jpg" alt="">
-                <h5>28,500원</h5>
-                <h3>해피 겨울방학</h3>
-                <div class="hover_effect1"></div>
-            </li>
-        </ul>
-        <button id="event_btn">더 많은 혜택 보기</button>
-    </div> 
-</div>
+
 <div id="information">
     <div id="information_box">
         <h2>다양한 공연 및 퍼레이드
@@ -493,51 +522,127 @@
     </div>
     </div>
 </div>
-<div id="fun">
+<div id="attraction">
     <div id="fun_box">
         <h2>재미있고 즐거운 <span class="fw900">다양한 어트랙션!</span></h2>
-        <div id="button_box">
-            <button>아이와 함께</button>
-            <button>야외에서 신나게</button>
-            <button>실내에서 쾌적하게</button>
+        <div id="attraction_bt">
+            <button id="attraction_bt1">아이와 함께</button>
+            <button id="attraction_bt2">야외에서 신나게</button>
+            <button id="attraction_bt3">실내에서 쾌적하게</button>
         </div>
-        <ul>
-            <li class="fun_box_li_w50">
-                <img src="images/202010231014353460.jpg" alt="">
-                <div class="fun_p_box"><h3>언더씨킹덤</h3>
-                <h5>아이와 함께 떠나는 해저왕국 탐험!</h5></div>
-                
-            </li>
-            <li>
-                <img src="images/202006241107064920.jpg" alt="">
-                <div class="fun_p_box"><h3>유레카</h3>
-                <h5>높이높이 날아올라요~</h5></div>
-                
-            </li>
-            <li>
-                <img src="images/202006241107064920.jpg" alt="">
-                <div class="fun_p_box"><h3>점핑피쉬</h3>
-                <h5>신나는 해저여행</h5></div>
-                
-            </li>
-            <li>
-                <img src="images/20180619061904008.jpg" alt="">
-                <div class="fun_p_box"><h3>스윙팡팡</h3>
-                <h5>로티와 친구들이 함께 팡팡</h5></div>
-                
-            </li>
-            <li>
-                <img src="images/202006241108538410.jpg" alt="">
-                <div class="fun_p_box"><h3>매직붕붕카</h3>
-                <h5>헨젤과 그레텔을 구해주세요!</h5></div>
-                
-            </li>
-            <li class="fun_box_li_w50">
-                <img src="images/202007241119261500.jpg" alt="">
-                <div class="fun_p_box"><h3>키즈토리아</h3>
-                <h5>마음껏 즐길수 있는 거대한 동화속 세상</h5></div>
-            </li>
-        </ul>
+        <div id="attraction_box">
+            <ul id="attraction_box1">
+                <li class="fun_box_li_w50">
+                    <img src="images/202010231014353460.jpg" alt="">
+                    <div class="fun_p_box"><h3>언더씨킹덤</h3>
+                    <h5>아이와 함께 떠나는 해저왕국 탐험!</h5></div>
+                    
+                </li>
+                <li>
+                    <img src="images/Untitled-1.jpg" alt="">
+                    <div class="fun_p_box"><h3>유레카</h3>
+                    <h5>높이높이 날아올라요~</h5></div>
+                    
+                </li>
+                <li>
+                    <img src="images/202006241107064920.jpg" alt="">
+                    <div class="fun_p_box"><h3>점핑피쉬</h3>
+                    <h5>신나는 해저여행</h5></div>
+                    
+                </li>
+                <li>
+                    <img src="images/20180619061904008.jpg" alt="">
+                    <div class="fun_p_box"><h3>스윙팡팡</h3>
+                    <h5>로티와 친구들이 함께 팡팡</h5></div>
+                    
+                </li>
+                <li>
+                    <img src="images/202006241108538410.jpg" alt="">
+                    <div class="fun_p_box"><h3>매직붕붕카</h3>
+                    <h5>헨젤과 그레텔을 구해주세요!</h5></div>
+                    
+                </li>
+                <li class="fun_box_li_w50">
+                    <img src="images/202007241119261500.jpg" alt="">
+                    <div class="fun_p_box"><h3>키즈토리아</h3>
+                    <h5>마음껏 즐길수 있는 거대한 동화속 세상</h5></div>
+                </li>
+            </ul>
+            <ul id="attraction_box2">
+                <li class="fun_box_li_w50">
+                    <img src="images/20180619061936068.jpg" alt="">
+                    <div class="fun_p_box"><h3>자이로스핀</h3>
+                    <h5>자이로 시리즈 3번째!</h5></div>
+                    
+                </li>
+                <li>
+                    <img src="images/20180619061946525.jpg" alt="">
+                    <div class="fun_p_box"><h3>혜성특급</h3>
+                    <h5>특급열차와 함께 떠나요</h5></div>
+                    
+                </li>
+                <li>
+                    <img src="images/20180619062006253.jpg" alt="">
+                    <div class="fun_p_box"><h3>자이로스윙</h3>
+                    <h5>자유낙하와 자유회전을 동시에</h5></div>
+                    
+                </li>
+                <li>
+                    <img src="images/20180619062006253.jpg" alt="">
+                    <div class="fun_p_box"><h3>아트란티스</h3>
+                    <h5>어트랙션의 혁명 최고의 스릴</h5></div>
+                    
+                </li>
+                <li>
+                    <img src="images/20180619062016631.jpg" alt="">
+                    <div class="fun_p_box"><h3>번지드롭</h3>
+                    <h5>번지점프의 짜릿한 묘미!</h5></div>
+                    
+                </li>
+                <li class="fun_box_li_w50">
+                    <img src="images/20180619062030119.jpg" alt="">
+                    <div class="fun_p_box"><h3>회전그네</h3>
+                    <h5>빙글빙글 멈출 수 없는 재미</h5></div>
+                </li>
+            </ul>
+            <ul id="attraction_box3">
+                <li class="fun_box_li_w50">
+                    <img src="images/20180619062050445.jpg" alt="">
+                    <div class="fun_p_box"><h3>후룸라이드</h3>
+                    <h5>색다른 모험, 쥬라기 시대로</h5></div>
+                    
+                </li>
+                <li>
+                    <img src="images/20180619062100417.jpg" alt="">
+                    <div class="fun_p_box"><h3>신밧드의 모험</h3>
+                    <h5>신비한 모험을 떠나요~</h5></div>
+                    
+                </li>
+                <li>
+                    <img src="images/20180619062112176.jpg" alt="">
+                    <div class="fun_p_box"><h3>파라오의 분노</h3>
+                    <h5>실감나는 라이드를 즐기자!</h5></div>
+                    
+                </li>
+                <li>
+                    <img src="images/20180619062121981.jpg" alt="">
+                    <div class="fun_p_box"><h3>스페인 해적선</h3>
+                    <h5>거친 파도와 같은 아찔함!</h5></div>
+                    
+                </li>
+                <li>
+                    <img src="images/20180619062130150.jpg" alt="">
+                    <div class="fun_p_box"><h3>후렌치 레볼루션</h3>
+                    <h5>숨막히는 롤러코스터의 매력</h5></div>
+                    
+                </li>
+                <li class="fun_box_li_w50">
+                    <img src="images/2020062411132a32060.jpg" alt="">
+                    <div class="fun_p_box"><h3>범퍼카</h3>
+                    <h5>좌충우돌 부딪히는 즐거운 소리</h5></div>
+                </li>
+            </ul>
+        </div>
         <div id="fun_btn_box2">
             <button>더 많은 어트랙션 보기</button>
             <button>운휴 정보 보러가기</button>
