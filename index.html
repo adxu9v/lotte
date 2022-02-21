@@ -17,7 +17,7 @@
                 $(this).children('.sub_wrap').stop().slideDown()
             })
             $('#header2_box>ul>li').mouseleave(function(){
-                $(this).children('.sub_wrap').stop().slideUp()
+                $(this).children('.sub_wrap').stop().slideUp(0)
             })
             if($('#header2_box>ul>li').mouseenter()){
                 $('.sub_wrap').stop().slideDown(0)
