@@ -17,7 +17,7 @@
             $('#slide_btn>ul>li').click(function(){
                 $(this).css({'opacity':'1'}).children('img').attr({'src':'icons/imgRoll_indi_on.png'});
                 $(this).siblings('li').css({'opacity':'0.3'}).children('img').attr({'src':'icons/imgRoll_indi.png'})
-                $('#slide_imgbox').animate({'marginLeft':$(this).index()*-100+'%'})
+                $('#slide_imgbox').animate({'left':$(this).index()*-100+'%'})
             })
             $('#header2_box>ul>li').mouseenter(function(){
                 $(this).children('.sub_wrap').stop().slideDown()
@@ -51,7 +51,28 @@
                 $(this).children('h2').animate({'left':'200px'},0)
                 $(this).children('h2').animate({'left':'0px'},200)
             })
+            let left100 = 0;
+            $('#slide_prebtn').click(function(){
+                left100 = left100 + 100
+                let a = left100
+                if(left100>0){left100 = -700}
+                $('#slide_imgbox').animate({'left':left100 + '%'})
+                // $('#slide_btn>ul>li:nth-child('+a+')').css({'opacity':'1'}.children('img').attr({'src':'icons/imgRoll_indi_on.png'}))
+                // $('#slide_btn>ul>li:nth-child('+a+')').siblings('li').css({'opacity':'0.3'}).children('img').attr({'src':'icons/imgRoll_indi.png'})
+                console.log(a)
+
             })
+            // $('#attraction_bt2').click(function(){
+            //     $('#attraction_box1 h3').children()
+            // })
+            $('#slide_nextbtn').click(function(){
+                left100 = left100 - 100
+                let a = left100
+                if(left100<-700){left100 = 0}
+                $('#slide_imgbox').animate({'left':left100 + '%'})
+                console.log(a)
+            })
+        })
     </script>
     <style>
         @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
@@ -260,7 +281,7 @@
         </div>
     </header>
 <div id="slide">
-    <ul id="slide_imgbox">
+    <div id="slide_wrap"><ul id="slide_imgbox">
         <li><img src="images/main_slide1.jpg" alt=""></li>
         <li><img src="images/main_slide2.jpg" alt=""></li>
         <li><img src="images/main_slide3.jpg" alt=""></li>
@@ -295,9 +316,13 @@
             <li>
                 <img src="icons/imgRoll_indi.png" alt="">
             </li>
+            <li>
+                <img src="icons/imgRoll_indi.png" alt="">
+            </li>
         </ul>
         <div id="slide_pause"><img src="icons/play_bt.png" alt=""></div>
-    </div>
+    </div></div>
+    
 </div>
 <div id="operating_box">
     <div id="operating_time">
@@ -361,7 +386,7 @@
     </ul></div>
     <div id="line_box">
         <div id="line"></div>
-        <img src="icons/button.png" alt="">
+        <img src="icons/button.png" alt="" id="line_box_btn">
     </div>
     <div id="information_drag">
         <button id="information_bt1">더 많은 공연 보기</button>
