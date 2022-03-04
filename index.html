@@ -23,8 +23,7 @@
                 $(this).children('.sub_wrap').stop().slideDown()
             })
             $('#header2_box>ul>li').mouseleave(function(){
-                if($(this).mouseenter){$(this).children('.sub_wrap').slideDown()}
-               else{ $(this).children('.sub_wrap').stop().slideUp()}
+               $(this).children('.sub_wrap').stop().slideUp()
             })
             $('#attraction_bt1').click(function(){
                 $(this).css({'color':'#550adf', 'border':'1px solid #550adf'}).siblings().css({'color':'#666', 'border':'1px solid #aaa'})
@@ -52,14 +51,13 @@
                 $(this).children('h2').animate({'left':'0px'},200)
             })
             let left100 = 0;
+
             $('#slide_prebtn').click(function(){
                 left100 = left100 + 100
-                let a = left100
                 if(left100>0){left100 = -700}
                 $('#slide_imgbox').animate({'left':left100 + '%'})
                 // $('#slide_btn>ul>li:nth-child('+a+')').css({'opacity':'1'}.children('img').attr({'src':'icons/imgRoll_indi_on.png'}))
                 // $('#slide_btn>ul>li:nth-child('+a+')').siblings('li').css({'opacity':'0.3'}).children('img').attr({'src':'icons/imgRoll_indi.png'})
-                console.log(a)
 
             })
             // $('#attraction_bt2').click(function(){
@@ -72,6 +70,11 @@
                 $('#slide_imgbox').animate({'left':left100 + '%'})
                 console.log(a)
             })
+            setInterval(function(){
+                left100 = left100 - 100
+                if(left100<-700){left100 = 0}
+                $('#slide_imgbox').stop().animate({'left':left100 + '%'})
+            },3000)
         })
     </script>
     <style>

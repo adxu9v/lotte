@@ -40,9 +40,9 @@ header{width: 100%; height: 147px;}
 .sub_box3_arrow{margin-top: 40px;}
 .sub_box3_mobile{position: absolute; bottom: 0; right: 0;}
 .sub_arrow{}
-#slide{width: 100%; height: 700px; overflow: hidden; background-size: cover;  cursor: pointer;}
-#slide_wrap{width: 100%; height: 100%; position: relative;}
-#slide_imgbox{width: 800%; position: absolute; top: 0; left: 0; overflow: hidden;}
+#slide{width: 100%; overflow: hidden; background-size: cover;  cursor: pointer;}
+#slide_wrap{width: 100%; height: 30vw; position: relative;}
+#slide_imgbox{width: 800%; overflow: hidden; position: absolute;}
 #slide_imgbox>li{width: 12.5%;float: left;}
 #slide_imgbox>li>img{width: 100%; vertical-align: top;}
 #slide_prebtn{position: absolute; top: 0; bottom: 0; left: 20px; margin: auto;}
