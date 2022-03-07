@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   
+  <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="jqueryui/style.css">
     <title>롯데월드 어드벤처</title>
     <link rel="shortcut icon" href="icons/lotte_fav.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
@@ -22,7 +26,41 @@
             $('#header2_box>ul>li').mouseenter(function(){
                 $('#sub_bg').stop().slideDown()
             })
-            $('#header2_box>ul>li:nth-child')
+            $('#header2_box>ul>li:nth-child(1)').mouseenter(function(){
+                $('.sub_box2>ul>li:nth-child(1)').html('어트랙션')
+                $('.sub_box2>ul>li:nth-child(2)').html('페스티벌')
+                $('.sub_box2>ul>li:nth-child(3)').html('공연').css({'border-bottom':'1px solid #ccc'})
+                $('.sub_box2>ul>li:nth-child(4)').html('다이닝/쇼핑')
+                $('.sub_box2>ul>li:nth-child(5)').html('다시만난월드/캐릭터전시회').css({'border-bottom':'1px solid #ccc'})
+            })
+            $('#header2_box>ul>li:nth-child(2)').mouseenter(function(){
+                $('.sub_box2>ul>li:nth-child(1)').html('이용요금')
+                $('.sub_box2>ul>li:nth-child(2)').html('이달의 혜택')
+                $('.sub_box2>ul>li:nth-child(3)').html('연간이용').css({'border-bottom':'1px solid #ccc'})
+                $('.sub_box2>ul>li:nth-child(4)').html('롯데월드카드')
+                $('.sub_box2>ul>li:nth-child(5)').html('').css({'border-bottom':'none'}).siblings().css({'border-bottom':'1px solid #ccc'})
+            })
+            $('#header2_box>ul>li:nth-child(3)').mouseenter(function(){
+                $('.sub_box2>ul>li:nth-child(1)').html('공연참여')
+                $('.sub_box2>ul>li:nth-child(2)').html('가든스테이지 좌석예약')
+                $('.sub_box2>ul>li:nth-child(3)').html('').css({'border-bottom':'none'})
+                $('.sub_box2>ul>li:nth-child(4)').html('').css({'border-bottom':'none'})
+                $('.sub_box2>ul>li:nth-child(5)').html('').css({'border-bottom':'none'})
+            })
+            $('#header2_box>ul>li:nth-child(4)').mouseenter(function(){
+                $('.sub_box2>ul>li:nth-child(1)').html('운영/운휴')
+                $('.sub_box2>ul>li:nth-child(2)').html('파크 이용안내')
+                $('.sub_box2>ul>li:nth-child(3)').html('편의시설/제도').css({'border-bottom':'1px solid #ccc'})
+                $('.sub_box2>ul>li:nth-child(4)').html('오시는 길').css({'border-bottom':'1px solid #ccc'})
+                $('.sub_box2>ul>li:nth-child(5)').html('가이드맵').css({'border-bottom':'1px solid #ccc'})
+            })
+            $('#header2_box>ul>li:nth-child(5)').mouseenter(function(){
+                $('.sub_box2>ul>li:nth-child(1)').html('공지사항')
+                $('.sub_box2>ul>li:nth-child(2)').html('FAQ')
+                $('.sub_box2>ul>li:nth-child(3)').html('고객소리함').css({'border-bottom':'1px solid #ccc'})
+                $('.sub_box2>ul>li:nth-child(4)').html('').css({'border-bottom':'none'})
+                $('.sub_box2>ul>li:nth-child(5)').html('').css({'border-bottom':'none'})
+            })
             $('#header2_box>ul>li').mouseleave(function(){
                 $('#sub_bg').stop().slideUp()
             })
@@ -104,10 +142,8 @@
                 $('#slide_imgbox').stop().animate({'left':left100 + '%'})
             },3000)
             $(function(){
-                $('#line_box').draggable();
+                $('#line_box_btn>img').draggable({ containment : "parent", axis:'x'});
             });
-                
-            
         })
     </script>
     <style>
@@ -172,6 +208,8 @@
                                         <li>공지사항</li>
                                         <li>FAQ</li>
                                         <li>고객소리함</li>
+                                        <li></li>
+                                        <li></li>
                                     </ul>
                                 </div>
                                 <div class="sub_box3">
@@ -315,9 +353,9 @@
         <li><img src="images/202008050444485270_276.jpg" alt=""><div class="gradiant_box"><h4>매직캐슬 라이츠업</h4></div></li>
         <li><img src="images/201906250408247370_276.jpg" alt=""><div class="gradiant_box"><h4>미라클 나이트</h4></div></li>
     </ul></div>
-    <div id="line_box">
+    <div id="line_box" class="ui-widget-content">
+        <div id="line_box_btn"><img src="icons/button.png" alt="" class="ui-widget-content"></div>
         <div id="line"></div>
-        <img src="icons/button.png" alt="" id="line_box_btn" class="ui-widget-content">
     </div>
     <div id="information_drag">
         <button id="information_bt1">더 많은 공연 보기</button>
