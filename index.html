@@ -112,8 +112,8 @@
                     $('#special_ul_box').delay(400).animate({'marginTop':'0','opacity':'1'})
                     $('#special_news_box').delay(600).animate({'marginTop':'50','opacity':'1'})
                 }
-                if(sc<4299){ $('#top_btn').css({'position':'fixed'})}
-                if(sc>4300){
+                if(sc<4219){ $('#top_btn').css({'position':'fixed'})}
+                if(sc>4220){
                     $('#top_btn').css({'position':'absolute'})
                 }
             })
@@ -145,24 +145,35 @@
                 $('#slide_imgbox').animate({'left':left100 + '%'})
                 console.log(a)
             })
+            // 자동 슬라이드 
             setInterval(function(){
                 left100 = left100 - 100
+                let slidenum = (-left100/100)+1
+                if(slidenum<1){slidenum=1}
                 if(left100<-700){left100 = 0}
                 $('#slide_imgbox').stop().animate({'left':left100 + '%'})
+                $('#box-x2').html(slidenum)     
+                $('#slide_btn>ul>li:nth-child('+slidenum+')').css({'opacity':'1'}).children('img').attr({'src':'icons/imgRoll_indi_on.png'});
+                $('#slide_btn>ul>li:nth-child('+slidenum+')').siblings('li').css({'opacity':'0.3'}).children('img').attr({'src':'icons/imgRoll_indi.png'})
             },3000)
+
             $(function(){
                 $('#line_box_btn>img').draggable({ containment : "parent", axis:'x'});
                 $('#information_ul_box').draggable({containment : "information_box", axis:'x'});
             });
             $('#line_box_btn>img').mousemove(function(){
-               let box_x=  $(this).offset().left
+               let informationWidth = $('#information_box').width(); 
+               let box_x2= $('#information_box').offset().left
+               let box_x=  $(this).offset().left - (informationWidth-146)/2
+               
                $('#box-x').html(box_x)
-               $('#information_ul_box').css({'right':box_x})
+               $('#information_ul_box>ul').css({'left':box_x+'%','transform':'translateX(-'+box_x+'%)'})
+            //    $('#information_ul_box').css({'left':box_x})
             })
-            $('#information_ul_box').mousemove(function(){
-               let box_x2= $(this).offset().left
-               $('#box-x2').html( box_x2)
-            })
+            // $('#information_ul_box').mousemove(function(){
+            //    let box_x2= $(this).offset().left
+            //    
+            // })
         })
     </script>
     <style>
