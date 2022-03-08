@@ -23,45 +23,45 @@
                 $(this).siblings('li').css({'opacity':'0.3'}).children('img').attr({'src':'icons/imgRoll_indi.png'})
                 $('#slide_imgbox').animate({'left':$(this).index()*-100+'%'})
             })
-            $('#header2_box>ul>li').mouseenter(function(){
+            $('#header2_menu>li').mouseenter(function(){
                 $('#sub_bg').stop().slideDown()
             })
-            $('#header2_box>ul>li:nth-child(1)').mouseenter(function(){
+            $('#header2_menu>li:nth-child(1)').mouseenter(function(){
                 $('.sub_box2>ul>li:nth-child(1)').html('어트랙션')
                 $('.sub_box2>ul>li:nth-child(2)').html('페스티벌')
                 $('.sub_box2>ul>li:nth-child(3)').html('공연').css({'border-bottom':'1px solid #ccc'})
                 $('.sub_box2>ul>li:nth-child(4)').html('다이닝/쇼핑')
                 $('.sub_box2>ul>li:nth-child(5)').html('다시만난월드/캐릭터전시회').css({'border-bottom':'1px solid #ccc'})
             })
-            $('#header2_box>ul>li:nth-child(2)').mouseenter(function(){
+            $('#header2_menu>li:nth-child(2)').mouseenter(function(){
                 $('.sub_box2>ul>li:nth-child(1)').html('이용요금')
                 $('.sub_box2>ul>li:nth-child(2)').html('이달의 혜택')
                 $('.sub_box2>ul>li:nth-child(3)').html('연간이용').css({'border-bottom':'1px solid #ccc'})
                 $('.sub_box2>ul>li:nth-child(4)').html('롯데월드카드')
                 $('.sub_box2>ul>li:nth-child(5)').html('').css({'border-bottom':'none'}).siblings().css({'border-bottom':'1px solid #ccc'})
             })
-            $('#header2_box>ul>li:nth-child(3)').mouseenter(function(){
+            $('#header2_menu>li:nth-child(3)').mouseenter(function(){
                 $('.sub_box2>ul>li:nth-child(1)').html('공연참여')
                 $('.sub_box2>ul>li:nth-child(2)').html('가든스테이지 좌석예약')
                 $('.sub_box2>ul>li:nth-child(3)').html('').css({'border-bottom':'none'})
                 $('.sub_box2>ul>li:nth-child(4)').html('').css({'border-bottom':'none'})
                 $('.sub_box2>ul>li:nth-child(5)').html('').css({'border-bottom':'none'})
             })
-            $('#header2_box>ul>li:nth-child(4)').mouseenter(function(){
+            $('#header2_menu>li:nth-child(4)').mouseenter(function(){
                 $('.sub_box2>ul>li:nth-child(1)').html('운영/운휴')
                 $('.sub_box2>ul>li:nth-child(2)').html('파크 이용안내')
                 $('.sub_box2>ul>li:nth-child(3)').html('편의시설/제도').css({'border-bottom':'1px solid #ccc'})
                 $('.sub_box2>ul>li:nth-child(4)').html('오시는 길').css({'border-bottom':'1px solid #ccc'})
                 $('.sub_box2>ul>li:nth-child(5)').html('가이드맵').css({'border-bottom':'1px solid #ccc'})
             })
-            $('#header2_box>ul>li:nth-child(5)').mouseenter(function(){
+            $('#header2_menu>li:nth-child(5)').mouseenter(function(){
                 $('.sub_box2>ul>li:nth-child(1)').html('공지사항')
                 $('.sub_box2>ul>li:nth-child(2)').html('FAQ')
                 $('.sub_box2>ul>li:nth-child(3)').html('고객소리함').css({'border-bottom':'1px solid #ccc'})
                 $('.sub_box2>ul>li:nth-child(4)').html('').css({'border-bottom':'none'})
                 $('.sub_box2>ul>li:nth-child(5)').html('').css({'border-bottom':'none'})
             })
-            $('#header2_box>ul>li').mouseleave(function(){
+            $('#header2_menu>li').mouseleave(function(){
                 $('#sub_bg').stop().slideUp()
             })
             $('#attraction_bt1').click(function(){
@@ -80,6 +80,11 @@
             $(window).scroll(function(){
                let sc = $(window).scrollTop();
                $('#sc').text(sc)
+               if(sc>=200){$('header').css({'position':'fixed'});
+                          $('#header1').hide();
+                          $('#sub_bg').css({'top':'100px'})
+                            }
+               if(sc<200){$('header').css({'position':'absolute'}); $('#header1').show()}
                if(sc>399 && sc<1399){
                 $('#event_list').delay(400).animate({'marginTop':'50', 'opacity':'1'},500)
                 $('#event_btn').delay(500).animate({'marginTop':'50', 'opacity':'1'},500)
@@ -106,6 +111,10 @@
                     $('#special_line').delay(400).animate({'marginTop':'40','opacity':'1'})
                     $('#special_ul_box').delay(400).animate({'marginTop':'0','opacity':'1'})
                     $('#special_news_box').delay(600).animate({'marginTop':'50','opacity':'1'})
+                }
+                if(sc<4299){ $('#top_btn').css({'position':'fixed'})}
+                if(sc>4300){
+                    $('#top_btn').css({'position':'absolute'})
                 }
             })
             $('#special_top_btn').click(function(){
@@ -143,7 +152,17 @@
             },3000)
             $(function(){
                 $('#line_box_btn>img').draggable({ containment : "parent", axis:'x'});
+                $('#information_ul_box').draggable({containment : "information_box", axis:'x'});
             });
+            $('#line_box_btn>img').mousemove(function(){
+               let box_x=  $(this).offset().left
+               $('#box-x').html(box_x)
+               $('#information_ul_box').css({'right':box_x})
+            })
+            $('#information_ul_box').mousemove(function(){
+               let box_x2= $(this).offset().left
+               $('#box-x2').html( box_x2)
+            })
         })
     </script>
     <style>
@@ -540,6 +559,7 @@
         </div>
     </div>
 </div>
+<div id="top_btn"><img src="icons/quick_btn.png" alt=""><h2>QUICK</h2></div>
 </div>
 <footer>
     <div id="footer_box">
@@ -595,9 +615,11 @@
             </div>
         </div>
     </div>
+    
 </footer>
 <h1 id="sc">0</h1>
-<div id="top_btn"><img src="icons/quick_btn.png" alt=""><h2>QUICK</h2></div>
+<h1 id="box-x">0</h1>
+<h1 id="box-x2">0</h1>
 <div id="popup">
     <h2>특별방역지침에 따른 파크 이용 안내</h2>
     <h3><span>적용기간 </span> 22년 01월 17(월) ~ 22년 02월 20일(일)</h3>
