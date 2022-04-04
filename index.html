@@ -23,6 +23,32 @@
                 $(this).siblings('li').css({'opacity':'0.3'}).children('img').attr({'src':'icons/imgRoll_indi.png'})
                 $('#slide_imgbox').animate({'left':$(this).index()*-100+'%'})
             })
+            let slide_pause_num = 0;
+            $('#slide_pause').click(function(){
+                
+                if(slide_pause_num == 0){
+                    slide_pause_num = 1;
+                    $(this).children('img').attr({'src':'icons/play_bt_on.png'})
+                    speed = 0;
+                    }
+                else if(slide_pause_num == 1){
+                    slide_pause_num = 0;
+                    $(this).children('img').attr({'src':'icons/play_bt.png'})
+                    speed = 100;
+                    }
+                
+            })
+            let speed = 100;
+          setInterval(function(){
+                left100 = left100 - speed
+                let slidenum = (-left100/100)+1
+                if(slidenum<=1){slidenum=1}
+                if(left100<-700){left100 = 0}
+                $('#slide_imgbox').stop().animate({'left':left100 + '%'})
+                $('#box-x2').html(left100)     
+                $('#slide_btn>ul>li:nth-child('+slidenum+')').css({'opacity':'1'}).children('img').attr({'src':'icons/imgRoll_indi_on.png'});
+                $('#slide_btn>ul>li:nth-child('+slidenum+')').siblings('li').css({'opacity':'0.3'}).children('img').attr({'src':'icons/imgRoll_indi.png'})
+            },3000)
             $('#header2_menu>li').mouseenter(function(){
                 $('#sub_bg').stop().slideDown()
             })
@@ -79,12 +105,14 @@
             $('#operating_time').animate({marginTop:0, opacity:1},600)
             $(window).scroll(function(){
                let sc = $(window).scrollTop();
-               $('#sc').text(sc)
+               $('#sc').text(left100)
                if(sc>=200){$('header').css({'position':'fixed'});
                           $('#header1').hide();
                           $('#sub_bg').css({'top':'100px'})
                             }
-               if(sc<200){$('header').css({'position':'absolute'}); $('#header1').show()}
+               if(sc<200){$('header').css({'position':'absolute'}); $('#header1').show();
+               $('#sub_bg').css({'top':'146px'})
+               }
                if(sc>399 && sc<1399){
                 $('#event_list').delay(400).animate({'marginTop':'50', 'opacity':'1'},500)
                 $('#event_btn').delay(500).animate({'marginTop':'50', 'opacity':'1'},500)
@@ -126,11 +154,12 @@
                 $(this).children('h2').animate({'left':'0px'},200)
             })
             let left100 = 0;
-
+            
             $('#slide_prebtn').click(function(){
                 left100 = left100 + 100
                 if(left100>0){left100 = -700}
                 $('#slide_imgbox').animate({'left':left100 + '%'})
+                $('#slide_btn>ul>li:nth-child('+((left100*-0.01)+1)+')').css({'opacity':'1'}).children('img').attr({'src':'icons/imgRoll_indi_on.png'}).parent().siblings('li').css({'opacity':'0.3'}).children('img').attr({'src':'icons/imgRoll_indi.png'})
                 // $('#slide_btn>ul>li:nth-child('+a+')').css({'opacity':'1'}.children('img').attr({'src':'icons/imgRoll_indi_on.png'}))
                 // $('#slide_btn>ul>li:nth-child('+a+')').siblings('li').css({'opacity':'0.3'}).children('img').attr({'src':'icons/imgRoll_indi.png'})
 
@@ -140,22 +169,11 @@
             // })
             $('#slide_nextbtn').click(function(){
                 left100 = left100 - 100
-                let a = left100
                 if(left100<-700){left100 = 0}
                 $('#slide_imgbox').animate({'left':left100 + '%'})
-                console.log(a)
+                $('#slide_btn>ul>li:nth-child('+((left100*-0.01)+1)+')').css({'opacity':'1'}).children('img').attr({'src':'icons/imgRoll_indi_on.png'}).parent().siblings('li').css({'opacity':'0.3'}).children('img').attr({'src':'icons/imgRoll_indi.png'})
             })
             // 자동 슬라이드 
-            setInterval(function(){
-                left100 = left100 - 100
-                let slidenum = (-left100/100)+1
-                if(slidenum<1){slidenum=1}
-                if(left100<-700){left100 = 0}
-                $('#slide_imgbox').stop().animate({'left':left100 + '%'})
-                $('#box-x2').html(slidenum)     
-                $('#slide_btn>ul>li:nth-child('+slidenum+')').css({'opacity':'1'}).children('img').attr({'src':'icons/imgRoll_indi_on.png'});
-                $('#slide_btn>ul>li:nth-child('+slidenum+')').siblings('li').css({'opacity':'0.3'}).children('img').attr({'src':'icons/imgRoll_indi.png'})
-            },3000)
 
             $(function(){
                 $('#line_box_btn>img').draggable({ containment : "parent", axis:'x'});
@@ -626,11 +644,7 @@
             </div>
         </div>
     </div>
-    
 </footer>
-<h1 id="sc">0</h1>
-<h1 id="box-x">0</h1>
-<h1 id="box-x2">0</h1>
 <div id="popup">
     <h2>특별방역지침에 따른 파크 이용 안내</h2>
     <h3><span>적용기간 </span> 22년 01월 17(월) ~ 22년 02월 20일(일)</h3>
