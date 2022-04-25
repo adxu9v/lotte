@@ -123,7 +123,7 @@
                     $('#information_box>h2').animate({'marginTop':'50','opacity':'1'},500)
                     $('#information_box>h5').delay(100).animate({'marginTop':'30','opacity':'1'},500)
                     $('#information_ul_box').delay(300).animate({'marginTop':'100','opacity':'1'},500)
-                    $('#line_box').delay(400).animate({'marginTop':'100','opacity':'1'},500)
+                    $('#line_box').delay(400).animate({'marginTop':'500','opacity':'1'},500)
                     $('#information_drag').delay(600).animate({'marginTop':'80','opacity':'1'})
 
                 }
@@ -177,15 +177,16 @@
 
             $(function(){
                 $('#line_box_btn>img').draggable({ containment : "parent", axis:'x'});
-                $('#information_ul_box').draggable({containment : "information_box", axis:'x'});
+                $('#information_ul').draggable({ axis:'x'});
             });
             $('#line_box_btn>img').mousemove(function(){
                let informationWidth = $('#information_box').width(); 
                let box_x2= $('#information_box').offset().left
                let box_x=  $(this).offset().left - (informationWidth-146)/2
                
-               $('#box-x').html(box_x)
-               $('#information_ul_box>ul').css({'left':box_x+'%','transform':'translateX(-'+box_x+'%)'})
+               $('.sc').html(box_x)
+               $('#information_ul').css({'left':box_x+'%','transform':'translateX(-'+box_x+'%)'})
+            //    ,'transform':'translateX(-'+box_x+'%)'
             //    $('#information_ul_box').css({'left':box_x})
             })
             // $('#information_ul_box').mousemove(function(){
@@ -223,7 +224,7 @@
         </div>
         <div id="header2">
             <div id="header2_box">
-                <h1 id="logo"><img src="icons/logo.png" alt=""></h1>
+                <div id="logo"><img src="icons/logo.png" alt=""></div>
                 <ul id="header2_menu">
                     <li>즐길거리
                         <!-- <img src="icons/sub_menu_arrow.png" alt="" class="sub_arrow"> -->
@@ -384,23 +385,28 @@
 
 <div id="information">
     <div id="information_box">
-        <h2>다양한 공연 및 퍼레이드
+        <h2>다양한 공연 및 퍼레이드</h2>
         <span class="fw900">정보를 한눈에!</span>
         <h5>다양한 공연정보를 확인해보세요.</h5>
-    </h2>
-    <div id="information_ul_box"><ul>
-        <li><img src="images/202012291024150880_276.jpg" alt=""><div class="gradiant_box"><h4>로티스 어드벤처 퍼레이드</h4></div></li>
-        <li><img src="images/202201100144320930_276.jpg" alt=""><div class="gradiant_box"><h4>로티의 라이브 쇼!쇼!쇼!</h4></div></li>
-        <li><img src="images/202102081217495590_276.jpg" alt=""><div class="gradiant_box"><h4>민속 한마당</h4></div></li>
-        <li><img src="images/202105120228067320_276.jpg" alt=""><div class="gradiant_box"><h4>로티로티 송 앤 댄스2</h4></div></li>
-        <li><img src="images/202102151212017690_276.jpg" alt=""><div class="gradiant_box"><h4>앨비스 밴드 쇼</h4></div></li>
-        <li><img src="images/201912270455349210_276.jpg" alt=""><div class="gradiant_box"><h4>빅 밴드 쇼</h4></div></li>
-        <li><img src="images/202012310613493800_276.jpg" alt=""><div class="gradiant_box"><h4>캐릭터 환타지아</h4></div></li>
-        <li><img src="images/201912020120211100_276.jpg" alt=""><div class="gradiant_box"><h4>로티의 모험2:사이버 어드<br>벤쳐</h4></div></li>
-        <li><img src="images/201912230542317240_276.jpg" alt=""><div class="gradiant_box"><h4>렛츠 드림 나이트 퍼레이드</h4></div></li>
-        <li><img src="images/202008050444485270_276.jpg" alt=""><div class="gradiant_box"><h4>매직캐슬 라이츠업</h4></div></li>
-        <li><img src="images/201906250408247370_276.jpg" alt=""><div class="gradiant_box"><h4>미라클 나이트</h4></div></li>
-    </ul></div>
+    
+    <div id="information_ul_box">
+        <div class="information_draggable_box">
+            <ul id="information_ul">
+            <li><img src="images/202012291024150880_276.jpg" alt=""><div class="gradiant_box"><h4>로티스 어드벤처 퍼레이드</h4></div></li>
+            <li><img src="images/202201100144320930_276.jpg" alt=""><div class="gradiant_box"><h4>로티의 라이브 쇼!쇼!쇼!</h4></div></li>
+            <li><img src="images/202102081217495590_276.jpg" alt=""><div class="gradiant_box"><h4>민속 한마당</h4></div></li>
+            <li><img src="images/202105120228067320_276.jpg" alt=""><div class="gradiant_box"><h4>로티로티 송 앤 댄스2</h4></div></li>
+            <li><img src="images/202102151212017690_276.jpg" alt=""><div class="gradiant_box"><h4>앨비스 밴드 쇼</h4></div></li>
+            <li><img src="images/201912270455349210_276.jpg" alt=""><div class="gradiant_box"><h4>빅 밴드 쇼</h4></div></li>
+            <li><img src="images/202012310613493800_276.jpg" alt=""><div class="gradiant_box"><h4>캐릭터 환타지아</h4></div></li>
+            <li><img src="images/201912020120211100_276.jpg" alt=""><div class="gradiant_box"><h4>로티의 모험2:사이버 어드<br>벤쳐</h4></div></li>
+            <li><img src="images/201912230542317240_276.jpg" alt=""><div class="gradiant_box"><h4>렛츠 드림 나이트 퍼레이드</h4></div></li>
+            <li><img src="images/202008050444485270_276.jpg" alt=""><div class="gradiant_box"><h4>매직캐슬 라이츠업</h4></div></li>
+            <li><img src="images/201906250408247370_276.jpg" alt=""><div class="gradiant_box"><h4>미라클 나이트</h4></div></li>
+        </ul></div>
+        
+        </div>
+
     <div id="line_box" class="ui-widget-content">
         <div id="line_box_btn"><img src="icons/button.png" alt="" class="ui-widget-content"></div>
         <div id="line"></div>
@@ -615,7 +621,7 @@
                 <img src="icons/footer_logo.png" alt="">
             </div>
             <div id="footer_bottom_right">
-                <select name="" id="">
+                <select>
                     <option value="">계열사 관련 사이트</option>
                     <option value="">롯데그룹</option>
                     <option value="">롯데그룹채용</option>
@@ -632,12 +638,12 @@
                     <div id="footer_img_box">
                         <ul>
                             <li><img src="icons/isms_icon.png" alt="">
-                                <li><p>인증범위 <img src="icons/header_gnb_border2.jpg" alt=""> 온라인 예매 서비스 운영(롯데월드)
+                                <p>인증범위 <img src="icons/header_gnb_border2.jpg" alt=""> 온라인 예매 서비스 운영(롯데월드)
                                     <br>
-                                    유효기간 <img src="icons/header_gnb_border.jpg" alt=""> 2020.11.18~2023.11.17</p></li>
+                                    유효기간 <img src="icons/header_gnb_border.jpg" alt=""> 2020.11.18~2023.11.17</p>
                         </li>
                             <li><img src="icons/isms_icon.png" alt="">
-                                <li><p>한국서비스대상 명예의전당</p></li></li>
+                                <p>한국서비스대상 명예의전당</p></li>
                         </ul>
                         </div>
                     
@@ -651,9 +657,10 @@
     <button>자세히 보기</button>
     <div id="popup_text">
         <div id="popup_checkbox"></div>
-        <input type="checkbox" name="" id="">오늘 하루 보지 않기
+        <input type="checkbox">오늘 하루 보지 않기
     </div>
-    <img src="icons/popClose_icon4.png" alt="" id="popup_close">
+    <img src="icons/popClose_icon4.png" alt="popup_close_img" id="popup_close">
 </div>
+<div class="sc">sc</div>
 </body>
 </html>
