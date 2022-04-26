@@ -107,7 +107,7 @@ $(document).ready(()=>{
         if(sc>1400 && sc<2399){
             $('#information_box>h2').animate({'marginTop':'50','opacity':'1'},500)
             $('#information_box>h5').delay(100).animate({'marginTop':'30','opacity':'1'},500)
-            $('#information_ul_box').delay(300).animate({'marginTop':'100','opacity':'1'},500)
+            $('#information_ul').delay(300).animate({'top':'0','opacity':'1'},500)
             $('#line_box').delay(400).animate({'marginTop':'500','opacity':'1'},500)
             $('#information_drag').delay(600).animate({'marginTop':'80','opacity':'1'})
 
