@@ -160,20 +160,28 @@ $(document).ready(()=>{
     })
     // 자동 슬라이드 
 
-    $(function(){
+
         $('#line_box_btn>img').draggable({ containment : "parent", axis:'x'});
-        $('#information_ul').draggable({ axis:'x'});
-    });
+        $('#information_ul').draggable({ containment : 'parent', axis : 'x' , drag : function(){ $('#line_box_btn>img').css({'left':(69+(($('#information_ul').offset().left)*0.04928))+'%'})}
+       
+        });
+
     $('#line_box_btn>img').mousemove(function(){
        let informationWidth = $('#information_box').width(); 
-       let box_x2= $('#information_box').offset().left
+       let box_x2= $('#information_ul').offset().left
        let box_x=  $(this).offset().left - (informationWidth-146)/2
-       
-       $('.sc').html(box_x)
-       $('#information_ul').css({'left':box_x+'%','transform':'translateX(-'+box_x+'%)'})
+       let box42 = $('#line_box_btn>img').offset().left - (($('#information_box').width()-146)/2)
+       //146
+       $('.sc').html((box42))
+        $('#information_ul').css({'left':(box_x*0.295)+'%'})
     //    ,'transform':'translateX(-'+box_x+'%)'
     //    $('#information_ul_box').css({'left':box_x})
     })
+    // $('#information_ul').draggable(function(){
+    //     let box_3 = $('#line_box_btn>img').offset().left - (($('#information_box').width()-146)/2)
+    //     $('#line_box_btn>img').css({'left':box_3+'%'})
+    
+    // })
     // $('#information_ul_box').mousemove(function(){
     //    let box_x2= $(this).offset().left
     //    
