@@ -145,13 +145,8 @@ $(document).ready(()=>{
         if(left100>0){left100 = -700}
         $('#slide_imgbox').animate({'left':left100 + '%'})
         $('#slide_btn>ul>li:nth-child('+((left100*-0.01)+1)+')').css({'opacity':'1'}).children('img').attr({'src':'icons/imgRoll_indi_on.png'}).parent().siblings('li').css({'opacity':'0.3'}).children('img').attr({'src':'icons/imgRoll_indi.png'})
-        // $('#slide_btn>ul>li:nth-child('+a+')').css({'opacity':'1'}.children('img').attr({'src':'icons/imgRoll_indi_on.png'}))
-        // $('#slide_btn>ul>li:nth-child('+a+')').siblings('li').css({'opacity':'0.3'}).children('img').attr({'src':'icons/imgRoll_indi.png'})
 
     })
-    // $('#attraction_bt2').click(function(){
-    //     $('#attraction_box1 h3').children()
-    // })
     $('#slide_nextbtn').click(function(){
         left100 = left100 - 100
         if(left100<-700){left100 = 0}
@@ -168,22 +163,9 @@ $(document).ready(()=>{
 
     $('#line_box_btn>img').mousemove(function(){
        let informationWidth = $('#information_box').width(); 
-       let box_x2= $('#information_ul').offset().left
        let box_x=  $(this).offset().left - (informationWidth-146)/2
        let box42 = $('#line_box_btn>img').offset().left - (($('#information_box').width()-146)/2)
-       //146
        $('.sc').html((box42))
         $('#information_ul').css({'left':(box_x*0.295)+'%'})
-    //    ,'transform':'translateX(-'+box_x+'%)'
-    //    $('#information_ul_box').css({'left':box_x})
     })
-    // $('#information_ul').draggable(function(){
-    //     let box_3 = $('#line_box_btn>img').offset().left - (($('#information_box').width()-146)/2)
-    //     $('#line_box_btn>img').css({'left':box_3+'%'})
-    
-    // })
-    // $('#information_ul_box').mousemove(function(){
-    //    let box_x2= $(this).offset().left
-    //    
-    // })
 })
